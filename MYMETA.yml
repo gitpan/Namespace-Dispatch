@@ -2,7 +2,7 @@
 abstract: 'A dispatcher treating namespaces as a tree'
 author:
   - 'shelling <navyblueshellingford@gmail.com>'
-  - 'shelling <navyblueshellingford@gmai.com>'
+  - 'shelling <navyblueshellingford@gmail.com>'
 build_requires:
   ExtUtils::MakeMaker: 6.59
 configure_requires:
@@ -24,5 +24,5 @@ requires:
   perl: 5.010
 resources:
   license: http://opensource.org/licenses/mit-license.php
-  repository: git://github.com/shelling/namespace-dispatch.git
-version: 0.01
+  repository: http://github.com/shelling/namespace-dispatch
+version: 0.02
