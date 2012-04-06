@@ -1,14 +1,13 @@
 ---
 abstract: 'A dispatcher treating namespaces as a tree'
 author:
-  - 'shelling <navyblueshellingford@gmail.com>'
-  - 'shelling <navyblueshellingford@gmail.com>'
+  - 'shelling <navyblueshellingford@gmail.com>, shelling <navyblueshellingford@gmail.com>'
 build_requires:
   ExtUtils::MakeMaker: 6.59
 configure_requires:
-  ExtUtils::MakeMaker: 6.59
+  ExtUtils::MakeMaker: 0
 dynamic_config: 0
-generated_by: 'Module::Install version 1.06, CPAN::Meta::Converter version 2.112150'
+generated_by: 'ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.112150'
 license: mit
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -16,13 +15,9 @@ meta-spec:
 name: Namespace-Dispatch
 no_index:
   directory:
-    - inc
     - t
-    - xt
+    - inc
 requires:
   UNIVERSAL::filename: 0
   perl: 5.010
-resources:
-  license: http://opensource.org/licenses/mit-license.php
-  repository: http://github.com/shelling/namespace-dispatch
-version: 0.02
+version: 0.03
