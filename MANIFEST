@@ -19,13 +19,17 @@ META.yml
 README
 t/00_compile.t
 t/01_simple.t
+t/02_role.t
 t/lib/Foo.pm
 t/lib/Foo/Add.pm
 t/lib/Foo/Add/User.pm
 t/lib/Foo/Add/User/Hello.pm
+t/lib/Foo/Class.pm
+t/lib/Foo/ClassWithRole.pm
 t/lib/Foo/Del.pm
 t/lib/Foo/Help.pm
 t/lib/Foo/Modify.pm
+t/lib/Foo/Role.pm
 xt/01_podspell.t
 xt/02_perlcritic.t
 xt/03_pod.t

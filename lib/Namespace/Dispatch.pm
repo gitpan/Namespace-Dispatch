@@ -1,17 +1,25 @@
 package Namespace::Dispatch;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use 5.010;
 use UNIVERSAL::filename;
 
 sub import {
+    my $pkg    = shift;
     my $caller = caller;
+    my $meta   = ref($caller->meta) if $caller->can("meta");
 
-    *{$caller . "::" . "has_leaf"} = *{has_leaf};
-
-    *{$caller . "::" . "dispatch"} = *{dispatch};
-
-    *{$caller . '::' . 'leaves'} = *{leaves};
+    if ( $meta && $meta =~ m/(Class$|Role$)/ ) {
+        eval qq{
+            package $pkg;
+            use Moose::Role;
+        };
+        Moose::Util::apply_all_roles($caller, $pkg, {-excludes => "import"});
+    } else {
+        for (qw(has_leaf dispatch leaves)) {
+            *{$caller . "::" . $_} = *{$_};
+        }
+    }
 
 }
 
