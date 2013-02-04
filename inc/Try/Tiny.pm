@@ -11,7 +11,7 @@ BEGIN {
 	@ISA = qw(Exporter);
 }
 
-$VERSION = "0.11";
+$VERSION = "0.12";
 
 $VERSION = eval $VERSION;
 
@@ -150,5 +150,5 @@ __PACKAGE__
 
 __END__
 
-#line 601
+#line 603
 

@@ -1,7 +1,7 @@
 #line 1
 package Modern::Perl;
 {
-  $Modern::Perl::VERSION = '1.20120130';
+  $Modern::Perl::VERSION = '1.20121103';
 }
 # ABSTRACT: enable all of the features of Modern Perl with one import
 
@@ -23,7 +23,9 @@ my $wanted_date;
 sub VERSION
 {
     my ($self, $version) = @_;
-    return $VERSION if $version < 2009;
+
+    return $VERSION unless defined $version;
+    return $VERSION if             $version < 2009;
 
     $wanted_date = $version if (caller(1))[3] =~ /::BEGIN/;
     return 2012;
@@ -56,6 +58,7 @@ my %dates =
     2010 => ':5.10',
     2011 => ':5.12',
     2012 => ':5.14',
+    2013 => ':5.16',
 );
 
 sub validate_date
@@ -79,5 +82,5 @@ sub validate_date
 1;
 
 __END__
-#line 207
 
+#line 219

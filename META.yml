@@ -26,4 +26,4 @@ requires:
 resources:
   license: http://opensource.org/licenses/mit-license.php
   repository: http://github.com/shelling/namespace-dispatch
-version: 0.05
+version: 0.06
