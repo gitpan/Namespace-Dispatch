@@ -1,5 +1,5 @@
 package Namespace::Dispatch;
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 use 5.010;
 use UNIVERSAL::filename;
@@ -21,7 +21,8 @@ sub import {
 }
 
 sub has_leaf {
-    my ($class, $name) = @_;
+    my $class   = ref($_[0]) ? ref(shift) : shift;
+    my $name    = shift;
     my @leaves = @{$class->leaves} if $class->can("leaves");
     if ( $name ~~ @leaves ) {
         return $class . "::" . ucfirst($name);
@@ -31,8 +32,7 @@ sub has_leaf {
 }
 
 sub dispatch {
-
-    my $class   = shift;
+    my $class   = ref($_[0]) ? ref(shift) : shift;
     my $next    = shift;
     my $handler = $class->has_leaf($next);
 
@@ -54,7 +54,7 @@ sub dispatch {
 }
 
 sub leaves {
-    my $class = shift;
+    my $class   = ref($_[0]) ? ref(shift) : shift;
     my $file = $class->filename;
     $file =~ s{.pm$}{}g;
     use File::Basename;
